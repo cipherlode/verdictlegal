@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Evaluation - VerdictLegal</title>
+    <meta name="description" content="Start your free case evaluation with VerdictLegal. Submit your details securely and our legal team will respond within 24 hours.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .evaluation-hero {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, var(--navy-light) 100%);
+            padding: 12rem 0 8rem;
+            margin-top: 4.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .evaluation-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            opacity: 0.1;
+            filter: blur(80px);
+        }
+
+        .evaluation-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .evaluation-hero h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .evaluation-hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--white);
+            font-size: 1.0625rem;
+        }
+
+        .hero-feature i {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .evaluation-form-section {
+            padding: 4rem 0 6rem;
+            background: var(--white);
+            margin-top: -3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .form-header-bar {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+            padding: 3rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .form-header-bar h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .form-header-bar p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .form-body {
+            padding: 3rem;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gray-200);
+            z-index: 0;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 3px solid var(--gray-300);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gray-400);
+            transition: var(--transition);
+        }
+
+        .progress-step.active .step-circle {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: var(--white);
+        }
+
+        .progress-step.completed .step-circle {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--white);
+        }
+
+        .step-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-align: center;
+        }
+
+        .form-section-title {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .form-section-title i {
+            color: var(--gold);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-grid.single {
+            grid-template-columns: 1fr;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-group label {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.9375rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .required {
+            color: var(--gold);
+        }
+
+        .input-wrapper-box {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 1.125rem;
+        }
+
+        .input-wrapper-box input,
+        .input-wrapper-box select,
+        .input-wrapper-box textarea {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .input-wrapper-box textarea {
+            padding-top: 1rem;
+            padding-left: 3rem;
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .input-wrapper-box input:focus,
+        .input-wrapper-box select:focus,
+        .input-wrapper-box textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+        }
+
+        .confidential-notice {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--gold);
+            margin: 2rem 0;
+        }
+
+        .confidential-notice h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .confidential-notice h4 i {
+            color: var(--gold);
+        }
+
+        .confidential-notice p {
+            color: var(--gray-600);
+            font-size: 0.9375rem;
+            line-height: 1.6;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 0.25rem;
+            cursor: pointer;
+            accent-color: var(--gold);
+        }
+
+        .checkbox-wrapper label {
+            color: var(--gray-700);
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .checkbox-wrapper a {
+            color: var(--gold-dark);
+            text-decoration: underline;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--navy-deep);
+            font-size: 1.125rem;
+            font-weight: 700;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
+        }
+
+        .form-footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .contact-emergency {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .contact-emergency h3 {
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .emergency-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .emergency-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gray-700);
+        }
+
+        .emergency-contact i {
+            color: var(--gold);
+            font-size: 1.25rem;
+        }
+
+        .emergency-contact a {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .evaluation-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .form-body {
+                padding: 2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-steps {
+                flex-wrap: wrap;
+            }
+
+            .emergency-contacts {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>VerdictLegal</span>
+                </a>
+                
+                <nav class="nav" id="nav">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#process" class="nav-link">How It Works</a>
+                    <a href="index.html#reviews" class="nav-link">Reviews</a>
+                    <a href="case-evaluation.html" class="btn-primary-small active">Start Your Case</a>
+                </nav>
+                
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Evaluation Hero -->
+    <section class="evaluation-hero">
+        <div class="container">
+            <div class="evaluation-hero-content">
+                <h1>Begin Your Recovery</h1>
+                <p>Complete this confidential consultation form and our legal experts will evaluate your case within 24 hours. No obligations, no upfront fees.</p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <i class="fas fa-shield-check"></i>
+                        <span>100% Confidential</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>24-Hour Response</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-award"></i>
+                        <span>No Win, No Fee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evaluation Form -->
+    <section class="evaluation-form-section">
+        <div class="container">
+            <div class="form-card">
+                <div class="form-header-bar">
+                    <h2>Case Evaluation Form</h2>
+                    <p>All fields marked with * are required</p>
+                </div>
+
+                <div class="form-body">
+                    <div class="progress-steps">
+                        <div class="progress-step active">
+                            <div class="step-circle">1</div>
+                            <div class="step-label">Your Info</div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-circle">2</div>
+                            <div class="step-label">Case Details</div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-circle">3</div>
+                            <div class="step-label">Submit</div>
+                        </div>
+                    </div>
+
+                    <form id="caseForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                        
+                        <!-- Personal Information -->
+                        <div class="form-section-title">
+                            <i class="fas fa-user"></i>
+                            Personal Information
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label>Full Name <span class="required">*</span></label>
+                                <div class="input-wrapper-box">
+                                    <i class="input-icon fas fa-user"></i>
+                                    <input type="text" name="name" required placeholder="John Smith">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Email Address <span class="required">*</span></label>
+                                <div class="input-wrapper-box">
+                                    <i class="input-icon fas fa-envelope"></i>
+                                    <input type="email" name="email" required placeholder="john@example.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label>Phone Number <span class="required">*</span></label>
+                                <div class="input-wrapper-box">
+                                    <i class="input-icon fas fa-phone"></i>
+                                    <input type="tel" name="phone" required placeholder="+1 (555) 000-0000">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Preferred Contact Method</label>
+                                <div class="input-wrapper-box">
+                                    <i class="input-icon fas fa-comment"></i>
+                                    <select name="contactMethod">
+                                        <option value="email">Email</option>
+                                        <option value="phone">Phone</option>
+                                        <option value="both">Both</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Case Details -->
+                        <div class="form-section-title" style="margin-top: 3rem;">
+                            <i class="fas fa-file-alt"></i>
+                            Case Details
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label>Type of Fraud <span class="required">*</span></label>
+                                <div class="input-wrapper-box">
+                                    <i class="input-icon fas fa-exclamation-triangle"></i>
+                                    <select name="fraudType" required>
+                                        <option value="">Select type...</option>
+                                        <option value="crypto">Cryptocurrency Scam</option>
+                                        <option value="investment">Investment Fraud</option>
+                                        <option value="romance">Romance Scam</option>
+                                        <option value="wire">Wire Transfer Fraud</option>
+                                        <option value="banking">Banking Fraud</option>
+                                        <option value="identity">Identity Theft</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label>Approximate Amount Lost (USD) <span class="required">*</span></label>
+                                <div class="input-wrapper-box">
+                                    <i class="input-icon fas fa-dollar-sign"></i>
+                                    <input type="number" name="amount" required placeholder="50000" min="0" step="1000">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-grid single">
+                            <div class="input-group">
+                                <label>Case Description <span class="required">*</span></label>
+                                <div class="input-wrapper-box">
+                                    <i class="input-icon fas fa-align-left" style="top: 1.5rem;"></i>
+                                    <textarea name="description" required placeholder="Please provide detailed information about your case including dates, parties involved, and any documentation you have..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Confidential Notice -->
+                        <div class="confidential-notice">
+                            <h4><i class="fas fa-lock"></i> Attorney-Client Confidentiality</h4>
+                            <p>All information you provide is protected under attorney-client privilege and will be handled with the utmost confidentiality. We employ bank-level encryption and secure data storage to protect your sensitive information.</p>
+                        </div>
+
+                        <!-- Agreement -->
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">I understand and agree that submission of this form does not create an attorney-client relationship until a formal retainer agreement is signed. I have read and agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit Consultation Request
+                        </button>
+
+                        <p class="form-footer-note">
+                            <i class="fas fa-info-circle"></i>
+                            Our legal team will review your case and respond within 24 hours. For immediate assistance, please call our emergency line.
+                        </p>
+                    </form>
+
+                    <!-- Emergency Contact -->
+                    <div class="contact-emergency">
+                        <h3>Need Immediate Assistance?</h3>
+                        <div class="emergency-contacts">
+                            <div class="emergency-contact">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+17754629360">+1 (775) 462-9360</a>
+                            </div>
+                            <div class="emergency-contact">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:help.verdictlegal@outlook.com">help.verdictlegal@outlook.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>VerdictLegal</span>
+                        </div>
+                        <p>International law firm specializing in financial fraud recovery and asset tracing.</p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#home">Home</a></li>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#process">How It Works</a></li>
+                            <li><a href="index.html#testimonials">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Legal Disclaimer</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul class="footer-contact">
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:help.verdictlegal@outlook.com">help.verdictlegal@outlook.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:+17754629360">+1 (775) 462-9360</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>London | New York | Singapore</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 VerdictLegal International. All rights reserved.</p>
+                </div>
+                <p class="footer-disclaimer">
+                    VerdictLegal is a registered legal practice specializing in financial dispute resolution. Results may vary based on case complexity and jurisdiction.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

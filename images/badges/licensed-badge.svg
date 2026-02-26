@@ -1,0 +1,25 @@
+<svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Certificate/badge shape -->
+  <rect x="10" y="10" width="100" height="100" rx="8" fill="#1a2639"/>
+  <rect x="12" y="12" width="96" height="96" rx="6" fill="none" stroke="#c9a961" stroke-width="2"/>
+  
+  <!-- Inner decoration -->
+  <circle cx="60" cy="60" r="30" fill="none" stroke="#c9a961" stroke-width="1.5" opacity="0.3"/>
+  
+  <!-- Scale/balance icon -->
+  <g transform="translate(60, 50)" stroke="#c9a961" stroke-width="2" fill="none">
+    <line x1="-15" y1="0" x2="15" y2="0"/>
+    <circle cx="-10" cy="8" r="6"/>
+    <circle cx="10" cy="8" r="6"/>
+    <line x1="-10" y1="0" x2="-10" y2="8"/>
+    <line x1="10" y1="0" x2="10" y2="8"/>
+    <line x1="0" y1="0" x2="0" y2="-12"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="60" y="85" font-family="Arial, sans-serif" font-size="11" fill="#c9a961" text-anchor="middle" font-weight="bold">LICENSED</text>
+  <text x="60" y="98" font-family="Arial, sans-serif" font-size="8" fill="#c9a961" text-anchor="middle">&amp; INSURED</text>
+  
+  <!-- Bottom text -->
+  <text x="60" y="125" font-family="Arial, sans-serif" font-size="9" fill="#1a2639" text-anchor="middle">LEGAL PRACTICE</text>
+</svg>

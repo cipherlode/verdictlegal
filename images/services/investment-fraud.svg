@@ -1,0 +1,40 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="investGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2639"/>
+      <stop offset="100%" style="stop-color:#2d3e50"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="100" cy="100" r="90" fill="url(#investGrad)" opacity="0.1"/>
+  
+  <!-- Chart bars -->
+  <rect x="50" y="120" width="20" height="40" fill="#c9a961" rx="2"/>
+  <rect x="80" y="100" width="20" height="60" fill="#c9a961" rx="2"/>
+  <rect x="110" y="80" width="20" height="80" fill="#c9a961" rx="2"/>
+  <rect x="140" y="60" width="20" height="100" fill="#c9a961" rx="2"/>
+  
+  <!-- Trend line -->
+  <path d="M45 125 L60 115 L90 95 L120 75 L150 55" 
+        stroke="#1a2639" 
+        stroke-width="3" 
+        stroke-linecap="round"
+        fill="none"
+        opacity="0.5"/>
+  
+  <!-- Arrow up -->
+  <path d="M145 60 L150 55 L155 60" 
+        stroke="#1a2639" 
+        stroke-width="3" 
+        stroke-linecap="round"
+        fill="none"
+        opacity="0.5"/>
+  
+  <!-- Shield overlay for protection -->
+  <path d="M100 40 L130 50 L130 80 C130 95 115 105 100 110 C85 105 70 95 70 80 L70 50 Z" 
+        fill="none" 
+        stroke="#c9a961" 
+        stroke-width="2.5"
+        opacity="0.7"/>
+</svg>

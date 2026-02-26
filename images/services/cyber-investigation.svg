@@ -1,0 +1,50 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2639"/>
+      <stop offset="100%" style="stop-color:#2d3e50"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="100" cy="100" r="90" fill="url(#cyberGrad)" opacity="0.1"/>
+  
+  <!-- Shield shape -->
+  <path d="M100 50 L140 65 L140 100 C140 120 120 135 100 142 C80 135 60 120 60 100 L60 65 Z" 
+        fill="none" 
+        stroke="#c9a961" 
+        stroke-width="3"/>
+  
+  <!-- Binary code inside shield -->
+  <g opacity="0.6" fill="#1a2639" font-family="monospace" font-size="10">
+    <text x="75" y="85">101</text>
+    <text x="105" y="85">011</text>
+    <text x="75" y="100">110</text>
+    <text x="105" y="100">101</text>
+    <text x="75" y="115">010</text>
+    <text x="105" y="115">111</text>
+  </g>
+  
+  <!-- Fingerprint scan effect -->
+  <g opacity="0.4" stroke="#c9a961" stroke-width="1.5" fill="none">
+    <path d="M80 78 Q85 75 90 78"/>
+    <path d="M110 78 Q115 75 120 78"/>
+    <path d="M75 88 Q85 82 95 88"/>
+    <path d="M105 88 Q115 82 125 88"/>
+    <path d="M75 98 Q90 90 105 98"/>
+    <path d="M70 108 Q90 98 110 108"/>
+  </g>
+  
+  <!-- Network nodes -->
+  <circle cx="100" cy="60" r="3" fill="#c9a961"/>
+  <circle cx="70" cy="75" r="3" fill="#c9a961"/>
+  <circle cx="130" cy="75" r="3" fill="#c9a961"/>
+  <circle cx="100" cy="130" r="3" fill="#c9a961"/>
+  
+  <!-- Scan lines -->
+  <g opacity="0.3">
+    <line x1="50" y1="90" x2="150" y2="90" stroke="#c9a961" stroke-width="1"/>
+    <line x1="50" y1="100" x2="150" y2="100" stroke="#c9a961" stroke-width="1"/>
+    <line x1="50" y1="110" x2="150" y2="110" stroke="#c9a961" stroke-width="1"/>
+  </g>
+</svg>
